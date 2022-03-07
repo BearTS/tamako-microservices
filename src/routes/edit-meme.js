@@ -682,7 +682,7 @@ router.get('/spiderman-pointing', async (req, res) => {
 
 router.get('/spongebob-burn', async (req, res) => {
     const { burn, person } = req.query;
-    if (!burn || !person) return res.status(400).json({ message: 'Please provide an image and a person' });
+    if (!burn || !person) return res.status(400).json({ message: 'Missing Parameters' });
     if (burn.length > 150 || person.length > 15) return res.status(406).send(JSON.stringify({ error: 'Image url and person should be less than 15 characters' }));
     try {
         const buffer = await SpongebobBurn(burn, person);

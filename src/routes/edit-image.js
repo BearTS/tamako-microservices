@@ -84,7 +84,7 @@ router.get('/axis-cult', async (req, res) => {
     gender = gender.toLowerCase();
     const age = req.query.age;
     const profession = req.query.profession;
-    if (!gender || gender !== 'male' || gender !== 'female') return res.status(406).send(JSON.stringify({ error: 'No gender provided'}));
+    if (!(gender === 'male' || gender === 'female')) return res.status(406).send(JSON.stringify({ error: 'No gender provided'}));
     if (age < 1 || age > 1000) return res.status(406).send(JSON.stringify({ error: 'Invalid Age'}));
     if (profession.length > 15) return res.status(406).send(JSON.stringify({ error: 'Enter a profession less than 15 characters'}));
     if (!username) return res.status(406).send(JSON.stringify({ error: 'Enter a username'}));
