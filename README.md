@@ -1,7 +1,7 @@
  MicroServices for Tamako that make the bot work | In works 
 
 # To DO
-- [ ] Add Authentication
+- [x] Add Authentication (still in dev)
 - [ ] More endpoints
 
 Current Priorities: 
